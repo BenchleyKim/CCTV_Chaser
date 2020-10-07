@@ -38,7 +38,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+<<<<<<< HEAD
 
 # model file 
 openpose/*.caffemodel
 
+=======
+>>>>>>> 217dc70e4ca1afc9c9dab8174ef1256d7a3e8618
