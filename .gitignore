@@ -40,5 +40,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # model file 
-*.caffemodel
+openpose/*.caffemodel
 
