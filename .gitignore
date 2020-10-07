@@ -38,3 +38,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# model file 
+*.caffemodel
+
