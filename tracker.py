@@ -4,7 +4,7 @@ import cv2
 
 
 # 동영상 열기
-cap = cv2.VideoCapture('tracking2.mp4')
+cap = cv2.VideoCapture('NV_24.mp4')
 
 
 if not cap.isOpened():
@@ -14,13 +14,13 @@ if not cap.isOpened():
 # 트래커 객체 생성
 
 # Kernelized Correlation Filters
-tracker = cv2.TrackerKCF_create()
+#tracker = cv2.TrackerKCF_create()
 
 # Minimum Output Sum of Squared Error
 #tracker = cv2.TrackerMOSSE_create()
 
 # Discriminative Correlation Filter with Channel and Spatial Reliability
-#tracker = cv2.TrackerCSRT_create()
+tracker = cv2.TrackerCSRT_create()
 
 # 첫 번째 프레임에서 추적 ROI 설정
 ret, frame = cap.read()
@@ -40,9 +40,10 @@ while True:
         print('Frame read failed!')
         cv2.destroyAllWindows()
         sys.exit()
-
+    #[[24,25],[26,27]]
     # 추적 & ROI 사각형 업데이트
     ret, rc = tracker.update(frame)
+    
     rc = tuple([int(_) for _ in rc])
     cv2.rectangle(frame, rc, (0, 0, 255), 2)
 
